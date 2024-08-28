@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <title>html2pdf Test - Template</title>
@@ -19,9 +19,7 @@
     <button onclick="test()">Generate PDF</button>
 
     <!-- Div to capture. -->
-    <div id="root">
-      This is a test
-    </div>
+    <div id="root">This is a test</div>
 
     <!-- Include html2pdf bundle. -->
     <script src="../../dist/html2pdf.bundle.js"></script>
@@ -29,15 +27,23 @@
     <script>
       function test() {
         // Get the element.
-        var element = document.getElementById('root');
+        var element = document.getElementById("root");
 
         // Generate the PDF.
-        html2pdf().from(element).set({
-          margin: 1,
-          filename: 'test.pdf',
-          html2canvas: { scale: 2 },
-          jsPDF: {orientation: 'portrait', unit: 'in', format: 'letter', compressPDF: true}
-        }).save();
+        html2pdf()
+          .from(element)
+          .set({
+            margin: 1,
+            filename: "test.pdf",
+            html2canvas: { scale: 2 },
+            jsPDF: {
+              orientation: "portrait",
+              unit: "in",
+              format: "letter",
+              compressPDF: true,
+            },
+          })
+          .save();
       }
     </script>
   </body>
