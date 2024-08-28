@@ -112,7 +112,7 @@ Worker.prototype.toPdf = function toPdf() {
   return orig.toPdf.call(this).then(function toPdf_hyperlink() {
     // Add hyperlinks if the option is enabled.
     if (this.opt.enableLinks) {
-      const scrollOffsetAmt = opt.scrollOffsetAmt || 50; //Ocasionally we scroll past it, so this is a hack to scroll up a bit
+      const scrollOffsetAmt = this.opt.scrollOffsetAmt || 50; //Ocasionally we scroll past it, so this is a hack to scroll up a bit
 
       // Attach each anchor tag based on info from toContainer().
       linkInfo.forEach(function (l) {
